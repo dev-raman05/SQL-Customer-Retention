@@ -1,7 +1,6 @@
 # Submission — Decoding Customer Value: A SQL-Driven Retention Strategy
 
 **Summer Projects '26 · Consulting & Analytics Club, IIT Guwahati** · Submitted by Raman Mishra
-**POC:** Achyuth · Dhairya Nisar
 
 ---
 
