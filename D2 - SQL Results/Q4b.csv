@@ -1,0 +1,5 @@
+loyalty_segment,revenue_usd,discounted_revenue_usd,pct_discounted
+non_loyal,109600,53308,48.6
+latent,58777,18337,31.2
+spurious,39811,19639,49.3
+true,24893,8127,32.6

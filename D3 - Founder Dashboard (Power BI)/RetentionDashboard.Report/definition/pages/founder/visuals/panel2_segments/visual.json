@@ -1,0 +1,188 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "panel2_segments",
+  "position": {
+    "x": 650,
+    "y": 150,
+    "z": 5,
+    "height": 275,
+    "width": 610,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "loyalty_segment"
+                }
+              },
+              "queryRef": "customers.loyalty_segment",
+              "nativeQueryRef": "loyalty_segment",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "Total Customers"
+                }
+              },
+              "queryRef": "customers.Total Customers",
+              "nativeQueryRef": "Total Customers"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "Deal-Responsive Share %"
+                }
+              },
+              "queryRef": "customers.Deal-Responsive Share %",
+              "nativeQueryRef": "Deal-Responsive Share %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "Avg History Depth"
+                }
+              },
+              "queryRef": "customers.Avg History Depth",
+              "nativeQueryRef": "Avg History Depth"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "Avg LTV Proxy"
+                }
+              },
+              "queryRef": "customers.Avg LTV Proxy",
+              "nativeQueryRef": "Avg LTV Proxy"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Latent loyals (969) outnumber spurious (676) - activation beats sunsetting'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "185399fce10c21d49120",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers"
+              }
+            },
+            "Property": "loyalty_segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e56e3acf882191acba01",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers"
+              }
+            },
+            "Property": "Total Customers"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "32ef729139e65a3e0d96",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers"
+              }
+            },
+            "Property": "Deal-Responsive Share %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1f3670a59dabe113471c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers"
+              }
+            },
+            "Property": "Avg History Depth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "13f365f96a8b3d8c9774",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers"
+              }
+            },
+            "Property": "Avg LTV Proxy"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

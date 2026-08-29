@@ -1,0 +1,11 @@
+state,customers,ltv_per_customer,avg_basket_usd,pct_organic,ltv_rank
+Arizona,65,1934.0,66.6,66.2,1
+Pennsylvania,74,1871.0,66.6,55.4,2
+Alaska,72,1870.0,67.6,59.7,3
+Hawaii,65,1723.0,57.7,50.8,4
+Nevada,87,1717.0,63.4,52.9,5
+Wyoming,71,1704.0,60.7,57.7,6
+Iowa,69,1695.0,60.9,47.8,7
+Michigan,73,1692.0,62.1,60.3,8
+Utah,71,1680.0,62.6,53.5,9
+Tennessee,77,1655.0,62.0,63.6,10

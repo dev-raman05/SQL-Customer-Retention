@@ -1,0 +1,5 @@
+loyalty_segment,customers,pct_of_base,avg_ltv_proxy,avg_basket_usd,avg_rating,pct_subscribed
+true,410,10.5,2303.0,60.7,4.46,33.7
+spurious,676,17.3,2214.0,58.9,3.33,27.2
+latent,969,24.8,1275.0,60.7,4.47,30.9
+non_loyal,1845,47.3,1216.0,59.4,3.36,23.4

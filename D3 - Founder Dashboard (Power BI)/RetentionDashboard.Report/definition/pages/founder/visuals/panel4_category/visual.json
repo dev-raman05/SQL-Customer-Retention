@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "panel4_category",
+  "position": {
+    "x": 650,
+    "y": 445,
+    "z": 7,
+    "height": 255,
+    "width": 610,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "customers.category",
+              "nativeQueryRef": "category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers"
+                    }
+                  },
+                  "Property": "Avg History Depth"
+                }
+              },
+              "queryRef": "customers.Avg History Depth",
+              "nativeQueryRef": "Avg History Depth"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'No entry-point category - purchase depth is flat (25.0-25.7) across all four'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

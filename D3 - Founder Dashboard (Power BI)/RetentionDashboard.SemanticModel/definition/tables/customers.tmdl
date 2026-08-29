@@ -1,0 +1,282 @@
+table customers
+	lineageTag: 14a8934a-7df8-5fa4-a314-dbd76b3e6f36
+
+	measure 'Total Customers' = COUNTROWS(customers)
+		formatString: #,0
+		lineageTag: f08f094a-6260-56f7-9e9d-ccd8a6ae2651
+
+	measure 'Total Revenue' = SUM(customers[purchase_amount_usd])
+		formatString: $#,0
+		lineageTag: 2729962f-20cc-5521-9335-ed4fb30521b2
+
+	measure 'Avg Basket' = AVERAGE(customers[purchase_amount_usd])
+		formatString: $#,0.0
+		lineageTag: 6dd6b06b-ef99-5b8e-9c37-5acdf306838f
+
+	measure 'Total LTV Proxy' = SUM(customers[lifetime_value_proxy])
+		formatString: $#,0
+		lineageTag: 42b9f3eb-609b-5fc9-bac0-f253d2ed90be
+
+	measure 'Avg LTV Proxy' = AVERAGE(customers[lifetime_value_proxy])
+		formatString: $#,0
+		lineageTag: 854d9ae0-accb-5d81-ac99-e2c14626ba60
+
+	measure 'Avg History Depth' = AVERAGE(customers[previous_purchases])
+		formatString: 0.0
+		lineageTag: dbde55a7-d93a-5371-82b9-8083d184074a
+
+	measure 'Organic Share %' = DIVIDE(CALCULATE(COUNTROWS(customers), customers[promo_profile] = "organic"), COUNTROWS(customers))
+		formatString: 0.0%
+		lineageTag: 24403ff4-c612-51bc-8203-90d6f5f2a73d
+
+	measure 'Deal-Responsive Share %' = DIVIDE(CALCULATE(COUNTROWS(customers), customers[promo_profile] = "deal_responsive"), COUNTROWS(customers))
+		formatString: 0.0%
+		lineageTag: e25c2085-c31e-5d5b-bfb4-622b01d4c4fd
+
+	measure 'Deal-Responsive Revenue %' = DIVIDE(CALCULATE(SUM(customers[purchase_amount_usd]), customers[promo_profile] = "deal_responsive"), SUM(customers[purchase_amount_usd]))
+		formatString: 0.0%
+		lineageTag: 73194d96-93fc-5af5-8042-1021c91038d1
+
+	measure 'True Loyal Share %' = DIVIDE(CALCULATE(COUNTROWS(customers), customers[loyalty_segment] = "true"), COUNTROWS(customers))
+		formatString: 0.0%
+		lineageTag: 955e3913-5dd1-5016-ac1d-75327db6b512
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 29abb497-4bb4-5553-b279-a1445409283b
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: f25c0f03-7a5c-525c-a889-5bcad9de8b5b
+		summarizeBy: none
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 69bbdc07-f61f-5240-9dd7-4146ac0c7889
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_purchased
+		dataType: string
+		lineageTag: e3860a54-0635-5ac5-99b1-fa0f209d26a6
+		summarizeBy: none
+		sourceColumn: item_purchased
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 53849eb2-4c42-5ac4-a91a-9fb8335bf8b5
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_amount_usd
+		dataType: int64
+		formatString: 0
+		lineageTag: cd2137f6-1fcc-57b2-9148-1bc6ec0a8264
+		summarizeBy: sum
+		sourceColumn: purchase_amount_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: ddee88be-2889-5748-ada6-e8942b2970ad
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column size
+		dataType: string
+		lineageTag: 05aa26d7-9890-5a55-a4ff-5712c5cacbfb
+		summarizeBy: none
+		sourceColumn: size
+
+		annotation SummarizationSetBy = Automatic
+
+	column color
+		dataType: string
+		lineageTag: 468d90c0-a78a-52ab-afc3-aa0731e0fc39
+		summarizeBy: none
+		sourceColumn: color
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: string
+		lineageTag: ef2629f2-5e33-53cb-88bb-0521d055ddb0
+		summarizeBy: none
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_rating
+		dataType: double
+		lineageTag: 1d07ee2d-2c95-5f33-8ca0-52871c03156d
+		summarizeBy: sum
+		sourceColumn: review_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_type
+		dataType: string
+		lineageTag: a8e7408e-bf9c-5dea-a1e1-959cb5946944
+		summarizeBy: none
+		sourceColumn: shipping_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous_purchases
+		dataType: int64
+		formatString: 0
+		lineageTag: 633462d6-b82b-5464-8d7b-298d60dd69bf
+		summarizeBy: sum
+		sourceColumn: previous_purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: 35d690b2-c818-5932-ba19-9de5784c62ff
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency_raw
+		dataType: string
+		lineageTag: 69eb3901-c813-5c11-b0de-35c29342870a
+		summarizeBy: none
+		sourceColumn: frequency_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_frequency
+		dataType: string
+		lineageTag: 687d93f5-c471-50ed-8676-6661585196d6
+		summarizeBy: none
+		sourceColumn: purchase_frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_rating_missing
+		dataType: int64
+		formatString: 0
+		lineageTag: db148802-fb8c-56b1-9cdf-74903e24ecf2
+		summarizeBy: sum
+		sourceColumn: review_rating_missing
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscribed
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eacd006-81d9-559b-a131-4a104058d458
+		summarizeBy: sum
+		sourceColumn: subscribed
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_used
+		dataType: int64
+		formatString: 0
+		lineageTag: ea6e5d95-b9f4-550c-bd00-7cba8e6a3bfc
+		summarizeBy: sum
+		sourceColumn: discount_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_annual_purchases
+		dataType: int64
+		formatString: 0
+		lineageTag: 73ed246e-ebdd-540f-9c82-1c4fa18a858d
+		summarizeBy: sum
+		sourceColumn: est_annual_purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_value_proxy
+		dataType: int64
+		formatString: 0
+		lineageTag: aa0e1a76-c479-5425-b3ea-cdb6cda3cf40
+		summarizeBy: sum
+		sourceColumn: lifetime_value_proxy
+
+		annotation SummarizationSetBy = Automatic
+
+	column value_tier
+		dataType: string
+		lineageTag: 04c2a959-6f5b-5a6f-aa4c-be8887027d54
+		summarizeBy: none
+		sourceColumn: value_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column promo_profile
+		dataType: string
+		lineageTag: 77a98832-ab9a-5db5-8eb9-717312d034b0
+		summarizeBy: none
+		sourceColumn: promo_profile
+
+		annotation SummarizationSetBy = Automatic
+
+	column satisfaction_flag
+		dataType: string
+		lineageTag: 46540680-c0ee-532e-9b6d-901cd34fae96
+		summarizeBy: none
+		sourceColumn: satisfaction_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column def_a
+		dataType: int64
+		formatString: 0
+		lineageTag: a72a35c0-00bc-5686-a6db-209c9c132957
+		summarizeBy: sum
+		sourceColumn: def_a
+
+		annotation SummarizationSetBy = Automatic
+
+	column def_b
+		dataType: int64
+		formatString: 0
+		lineageTag: c7180e04-c343-50f0-a69d-7b55db3170c2
+		summarizeBy: sum
+		sourceColumn: def_b
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_segment
+		dataType: string
+		lineageTag: b10ee79a-6e46-5e04-a471-8675e03e557b
+		summarizeBy: none
+		sourceColumn: loyalty_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\\Users\\Anirudh Mohan\\Desktop\\Case Competitions\\competitions\\summer-projects-2026-iitg-cna\\02-sql-customer-retention\\data\\customers_loyalty.csv"),[Delimiter=",", Columns=27, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"customer_id", Int64.Type}, {"age", Int64.Type}, {"gender", type text}, {"item_purchased", type text}, {"category", type text}, {"purchase_amount_usd", Int64.Type}, {"state", type text}, {"size", type text}, {"color", type text}, {"season", type text}, {"review_rating", type number}, {"shipping_type", type text}, {"previous_purchases", Int64.Type}, {"payment_method", type text}, {"frequency_raw", type text}, {"purchase_frequency", type text}, {"review_rating_missing", Int64.Type}, {"subscribed", Int64.Type}, {"discount_used", Int64.Type}, {"est_annual_purchases", Int64.Type}, {"lifetime_value_proxy", Int64.Type}, {"value_tier", type text}, {"promo_profile", type text}, {"satisfaction_flag", type text}, {"def_a", Int64.Type}, {"def_b", Int64.Type}, {"loyalty_segment", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

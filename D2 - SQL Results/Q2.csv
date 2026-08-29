@@ -1,0 +1,5 @@
+value_tier,customers,avg_purchases_per_yr,avg_history_depth,avg_basket_usd,pct_subscribed,pct_deal_responsive,pct_satisfied
+T1,975,17.3,39.7,79.7,27.0,15.0,44.6
+T2,973,18.2,30.7,60.4,28.6,16.0,40.3
+T3,977,16.7,22.8,50.5,28.4,17.0,41.1
+T4,975,17.7,8.3,48.6,24.1,16.0,41.5
